@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معلومات اللوحات</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* التنسيقات الأساسية */
+        body {
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            color: white;
+            background-image: linear-gradient(rgba(196, 176, 176, 0.6), rgba(0, 0, 0, 0.6)), url('https://img.ccjdigital.com/files/base/randallreilly/all/image/2023/10/AdobeStock_587730658.652445a1b6808.png?auto=format%2Ccompress&fit=max&q=70&w=1200');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            overflow: hidden;
+        }
+
+        /* شريط التنقل */
+        nav {
+            background-color:  #ffffff; /* Slightly lighter blue for distinction */
+            padding: 0.6px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            display: inline-block;
+        }
+
+        nav .logo img {
+            height: 100px;
+            width: auto;
+        }
+        nav a {
+            color: rgb(11, 3, 3);
+            margin: 0 25px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #FFD700;
+            background-color:  #ffffff;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        /* المحتوى الرئيسي */
+        .container {
+            padding-top: 100px; /* لتجنب تغطية شريط التنقل */
+            padding-bottom: 60px; /* لتجنب تغطية الفوتر */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h2 {
+            font-size: 36px;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        table {
+            width: 80%;
+            max-width: 1000px;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 2s ease;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        }
+
+        th {
+            background-color: #FFD700;
+            font-size: 18px;
+        }
+
+        td {
+            font-size: 16px;
+        }
+
+        tr:hover {
+            background-color: #424949;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Footer */
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #ffffff; /* Dark gray for contrast with header */
+            color: rgb(7, 6, 6);
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer Phrase Styling */
+        footer p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #060605; /* Golden text */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- شريط التنقل -->
+    <nav>
+           <!-- Clickable Logo -->
+           <a href="/" class="logo">
+            <img src="static/truck_logo.png" alt="Trucker Logo">
+        </a>
+        <!-- Navigation Links -->
+        <div>
+        <a href="/">الرئيسية</a>
+        <a href="/video">مشاهدة الفيديو</a>
+        <a href="/dashboard"> احصائيات المخالفات </a>
+        <a class="button" href="/violations">كشف المخالفات</a>
+        
+    </div>
+    </nav>
+
+    <!-- المحتوى الرئيسي -->
+    <div class="container">
+        <h2>معلومات اللوحات</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>رقم اللوحة</th>
+                    <th>إحداثيات</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for plate in plates %}
+                <tr>
+                    <td>{{ plate['Plate Number'] }}</td>
+                    <td>{{ plate['Coordinates (x, y, w, h)'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Footer -->
+ 
+    <footer>
+        &copy; 2024 جميع الحقوق محفوظة
+        <p>معلومات لوحات الشاحنات</p> <!-- Footer phrase -->
+    </footer>
+
+</body>
+</html>

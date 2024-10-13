@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معلومات لوحات الشاحنات</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            color: white;
+            background-image: linear-gradient(rgba(196, 176, 176, 0.6), rgba(0, 0, 0, 0.6)), url('https://img.ccjdigital.com/files/base/randallreilly/all/image/2023/10/AdobeStock_587730658.652445a1b6808.png?auto=format%2Ccompress&fit=max&q=70&w=1200');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            overflow: hidden;
+        }
+
+        nav {
+            background-color:  #ffffff; /* Slightly lighter blue for distinction */
+            padding: 0.6px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Logo styling */
+        nav .logo {
+            display: inline-block;
+        }
+
+        nav .logo img {
+            height: 100px;
+            width: auto;
+        }
+
+        nav a {
+            color: rgb(11, 3, 3);
+            margin: 0 25px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #FFD700;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 60px);
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding-top: 5px;
+        }
+
+        .content {
+            max-width: 800px;
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 20px;
+            letter-spacing: 2px;
+            margin-bottom: 1px;
+            text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 2s ease;
+        }
+
+        a.button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 40px;
+            background-color: #FFD700;
+            color: #2C3E50;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        a.button:hover {
+            background-color: #FFB800;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Footer styling */
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #ffffff; /* Dark gray for contrast with header */
+            color: rgb(7, 6, 6);
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer Phrase Styling */
+        footer p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #060605; /* Golden text */
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Styling for violation detection section */
+        .violation-detection {
+            text-align: center;
+            padding-top: 60px;
+        }
+
+        video {
+            width: 700px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .violation-boxes {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            color: white;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <!-- Clickable Logo -->
+        <a href="/" class="logo">
+            <img src="static/truck_logo.png" alt="Trucker Logo">
+        </a>
+        <!-- Navigation Links -->
+        <div>
+            <a href="/video"> مشاهدة الفيديو</a>
+            <a href="/plates">  معلومات لوحات الشاحنات </a>
+            <a href="/dashboard">  احصائيات المخالفات </a>
+            <a href="/violations">كشف المخالفات</a> <!-- New link for violations tab -->
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="content">
+            <h1 style="font-size: 60px; font-weight: bold; text-align: center;">ترَكر</h1> 
+            <h1> الحل الذكي لمسارات الشاحنات وحلول النقل المتقدمة</h1>
+            <a class="button" href="/video">مشاهدة الفيديو </a><br>
+            <a class="button" href="/plates">  معلومات لوحات الشاحنات </a><br>
+            <a class="button" href="/dashboard">  احصائيات المخالفات </a><br>
+            <a class="button" href="/violations"> كشف المخالفات </a> <!-- Button for violations tab -->
+        </div>
+    </div>
+
+    <!-- New section for Violation Detection -->
+    <div class="violation-detection">
+        <h1>كشف المخالفات</h1>
+        <div class="container">
+            <video controls autoplay>
+                <source src="C:/Users/nujud/Desktop/web_final/output_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Violation Boxes -->
+        <div class="violation-boxes">
+            <div class="box" id="time-violation-box">0</div>
+            <div class="box" id="lane-violation-box">0</div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 جميع الحقوق محفوظة
+        <p>نحو قيادة آمنة وفعالة على الطريق</p> <!-- Footer phrase -->
+    </footer>
+
+    <!-- JavaScript to update violation counts dynamically -->
+    <script>
+        // Simulate real-time updates to violation counts
+        let timeViolationCount = 0;
+        let laneViolationCount = 0;
+
+        // Function to simulate violation detection (replace this with real detection logic)
+        function updateViolationCounts() {
+            // Simulate time violation detection
+            timeViolationCount += Math.floor(Math.random() * 2);  // Random increment for demonstration
+            laneViolationCount += Math.floor(Math.random() * 2);  // Random increment for demonstration
+
+            // Update the HTML elements with the new counts
+            document.getElementById("time-violation-box").textContent = timeViolationCount;
+            document.getElementById("lane-violation-box").textContent = laneViolationCount;
+        }
+
+        // Call update function every 2 seconds (replace this with real detection triggers)
+        setInterval(updateViolationCounts, 2000);
+    </script>
+
+</body>
+</html>
